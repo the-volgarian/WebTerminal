@@ -3,17 +3,20 @@ import { help, whois, projects, social, secret, banner } from "./commands.js";
 const inputField = document.getElementById('input');
 const outputContainer = document.getElementById('output');
 
-window.onload = function() {
-    typeWriter(banner, function() {
-    });
-  };
-  
+let isBannerLoaded = false;  
 
+window.onload = function() {
+    if (!isBannerLoaded) {  
+        typeWriter(banner, function() {
+            isBannerLoaded = true;  
+        });
+    }
+};
 
 function typeWriter(text, callback) {
   let i = 0;
   const interval = setInterval(() => {
-    outputContainer.innerHTML += text[i];
+    outputContainer.innerHTML += `<span class="typed-text">${text[i]}</span>`;
     outputContainer.scrollTop = outputContainer.scrollHeight; 
     i++;
 
@@ -23,7 +26,6 @@ function typeWriter(text, callback) {
     }
   }, 20); 
 }
-
 
 function processCommand(command) {
   let output = '';
@@ -42,20 +44,17 @@ function processCommand(command) {
       output = social.join('\n');
       break;
     default:
-      output = `Unknow command: ${command}`;
+      output = `Unknown command: ${command}`;
   }
 
-  outputContainer.textContent += `$ ${command}\n`; 
-  typeWriter(output + '\n\n', () => {});
+  outputContainer.innerHTML += `<span class="command-text">$ ${command}</span>\n`;  
+  typeWriter(output + '\n\n', () => {}); 
 }
-
 
 inputField.addEventListener('keydown', function (e) {
   if (e.key === 'Enter') {
     const command = inputField.value;
-    processCommand(command);
-    inputField.value = '';
-  }
-});
-
+    processCommand(command);  
+    inputField.value = ''; 
+}});
 
