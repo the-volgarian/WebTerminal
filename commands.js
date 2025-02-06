@@ -1,6 +1,8 @@
 
+
+
 const banner = [
-    '<span class="index" >TheVolgarian (TV) Not a Corporation. All volgarians reseved. </span>',
+    '<span class=\"index\" href="styles.css" >TheVolgarian (TV) Not a Corporation. All volgarians reseved. </span>',
     '<br></br>',
     "                                          .qd$$$$bp.\n",
     "                                        .q$$$$$$$$$$m.\n",
@@ -31,8 +33,8 @@ const banner = [
     " \\::..      _.-\"\"\"   `\"\"\"---\"\"                `::...___)\n",
     "  `\\:._.-\"\"\"                             \n",
     '<br></br>',
-    '<span class="colored" >Welcome to my interactive web terminal.  </span>',
-    '<span class= \"colored\">For list of available commands, type <span class=\"command\">\'help\'</span></span>'
+    '<span class="colored" >Welcome to my interactive web terminal.  </span>\n',
+    '<span class= \"colored\">For list of available commands, type <span class=\"command\">\'help\'</span></span>\n'
 
   ];
   
@@ -48,7 +50,9 @@ const banner = [
   ];
   
   const projects = [
-    'hello projects'
+    '<a href="url">https://github.com/The-Awesome-Five/giphy-project</a>',
+    '<a href="url">https://github.com/The-Awesome-Five/forum-project</a>',
+    '<a href="url">https://github.com/The-Awesome-Five/quiz-project</a>'
   ];
   
   const social = [
